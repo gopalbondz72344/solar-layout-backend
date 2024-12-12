@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^6oapujg8t#vzj5nm_q$f+pou^2e4==%k+(_j(f+hbr789o7vr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -138,3 +138,5 @@ CORS_ALLOW_METHODS = [
     'OPTIONS',
     'HEAD',
 ]
+
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")

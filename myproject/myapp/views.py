@@ -1,11 +1,14 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+import os
 from pymongo import MongoClient
 import logging
+
 import random
+MONGO_URI = os.getenv("MONGO_URI")
 # MongoDB connection setup
-client = MongoClient("mongodb+srv://saigopalbonthu:EawZVxqRxoU2tLCZ@node.8s5hmks.mongodb.net/")  # Replace with your MongoDB URI
+client = MongoClient(MONGO_URI)  # Replace with your MongoDB URI
 db = client['solarR&Ddatabase']  # Database name
 collection = db['generated_ids']  # Collection name
 solar_plants_collection= db['solar_plants']
